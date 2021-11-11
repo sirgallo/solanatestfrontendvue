@@ -1,31 +1,27 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Network Info</router-link>
-    </div>
+    <b-navbar toggleable="sm" type="light" variant="light">
+      <b-navbar-brand>Solana Test</b-navbar-brand>
+      <b-navbar-toggle target="tools">
+        <template vslot:default="{ expanded }">
+          <b-icon v-if="expanded" icon="chevron-bar-up"></b-icon>
+          <b-icon v-else icon="chevron-bar-down"></b-icon>
+        </template>
+      </b-navbar-toggle>
+      <b-collapse id="tools" is-nav>
+        <b-navbar-nav>
+          <b-nav-item to="/">Network Info</b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
     <router-view/>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import { Vue } from 'vue-property-decorator'
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+export default class App extends Vue {}
+</script>

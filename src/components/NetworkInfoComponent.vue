@@ -1,19 +1,17 @@
 <template>
   <div>
-    <div id="slotContainer" class="container">
-      <p>Current Slot: {{ netInfo.slot }}</p>
-    </div>
-    <div id="blockTimeContainer" class="container">
-      <p>Current Block Time: {{ netInfo.blockTime }}</p>
-    </div>
-    <div id="blockContainer" class="container">
-      <p>Current Block: {{ netInfo.block ? netInfo.block.blockhash : 'no block selected' }}</p>
-    </div>
+    <b-container>
+      <b-row>
+        <b-col>Current Slot: {{ netInfo.slot }}</b-col>
+        <b-col>Current Block Time: {{ netInfo.blockTime }}</b-col>
+        <b-col>Current Block: {{ netInfo.block ? netInfo.block.blockhash : 'no block selected' }}</b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 import { INetworkInfo } from 'models/NetworkInfo'
 import { NetworkInfoProvider } from '../../providers/NetworkInfoProvider'
 
