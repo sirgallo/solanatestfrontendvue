@@ -33,7 +33,7 @@ export default class NetworkInfoComponent extends Vue {
   async pollData () {
     setInterval(async () => {
       this.netInfo = await this.network.getNetworkInfo()
-    }, 6000)
+    }, 1000)
   }
 }
 </script>
