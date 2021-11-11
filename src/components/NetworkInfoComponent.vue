@@ -7,7 +7,7 @@
       <p>Current Block Time: {{ netInfo.blockTime }}</p>
     </div>
     <div id="blockContainer" class="container">
-      <p>Current Block: {{ netInfo.block ? netInfo.block.blockhash : 'no block selected'}}</p>
+      <p>Current Block: {{ netInfo.block ? netInfo.block.blockhash : 'no block selected' }}</p>
     </div>
   </div>
 </template>
@@ -20,7 +20,7 @@ import { NetworkInfoProvider } from '../../providers/NetworkInfoProvider'
 @Component
 export default class NetworkInfoComponent extends Vue {
   network = new NetworkInfoProvider('devnet')
-
+  ,
   netInfo: INetworkInfo = {
     slot: 0,
     blockTime: 0,
