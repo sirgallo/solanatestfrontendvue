@@ -20,7 +20,6 @@ import { NetworkInfoProvider } from '../../providers/NetworkInfoProvider'
 @Component
 export default class NetworkInfoComponent extends Vue {
   network = new NetworkInfoProvider('devnet')
-  
   netInfo: INetworkInfo = {
     slot: 0,
     blockTime: 0,
