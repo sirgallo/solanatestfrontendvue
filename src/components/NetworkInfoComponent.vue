@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!--
     <b-container>
       <b-row>
         <b-col>Current Slot: {{ netInfo.slot }}</b-col>
@@ -7,6 +8,10 @@
         <b-col>Current Block: {{ netInfo.block ? netInfo.block.blockhash : 'no block selected' }}</b-col>
       </b-row>
     </b-container>
+    -->
+    <p>Current Slot: {{ netInfo.slot }}</p>
+    <p>Current Block Time: {{ netInfo.blockTime }}</p>
+    <p>Current Block Hash: {{ netInfo.block.blockhash }}</p>
   </div>
 </template>
 
@@ -25,7 +30,7 @@ export default class NetworkInfoComponent extends Vue {
     slotLeader: ''
   }
 
-  async created () {
+  async mounted () {
     await this.network.getNetworkInfo()
     await this.pollData()
   }

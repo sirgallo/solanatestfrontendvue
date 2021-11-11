@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import NetworkInfoComponent from '@/components/NetworkInfoComponent.vue' // @ is an alias to /src
+import NetworkInfoComponent from '@/components/NetworkInfoComponent.vue'
 
 @Component({
   components: {
