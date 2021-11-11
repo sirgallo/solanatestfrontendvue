@@ -3,16 +3,19 @@
     <div id="slotContainer" class="container">
       <p>Current Slot: {{ netInfo.slot }}</p>
     </div>
-    <div id="blockContainer" class="container">
+    <div id="blockTimeContainer" class="container">
       <p>Current Block Time: {{ netInfo.blockTime }}</p>
+    </div>
+    <div id="blockContainer" class="container">
+      <p>Current Block: {{ netInfo.block ? netInfo.block.blockhash : 'no block selected'}}</p>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
-import { NetworkInfoProvider } from '../../providers/NetworkInfoProvider'
 import { INetworkInfo } from 'models/NetworkInfo'
+import { NetworkInfoProvider } from '../../providers/NetworkInfoProvider'
 
 @Component
 export default class NetworkInfoComponent extends Vue {
